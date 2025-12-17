@@ -1,0 +1,9 @@
+export const formatDateISO = (date: Date): string => {
+  return date.toISOString();
+};
+
+export const addDays = (date: Date, days: number): Date => {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+};

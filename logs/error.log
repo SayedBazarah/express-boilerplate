@@ -1,0 +1,52 @@
+2025-12-17 18:13:04:134 [31merror[39m: [31m[POST] /api/v1/users/register >> 400 - "email" is required, "password" is required[39m
+2025-12-17 18:13:30:1330 [31merror[39m: [31m[POST] /api/v1/users/register >> 400 - "password" is required[39m
+2025-12-17 18:13:41:1341 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - Expected double-quoted property name in JSON at position 60 (line 4 column 1)[39m
+2025-12-17 18:14:24:1424 [31merror[39m: [31m[POST] /api/v1/users/register >> 400 - "password" length must be at least 8 characters long[39m
+2025-12-17 18:14:36:1436 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31mE:\Projects Starter\backend-node\src\features\users\data\user.repository.ts:10:24[39m
+
+[31m   7 }[39m
+[31m   8 [39m
+[31m   9 async findByEmail(email: string): Promise<User | null> {[39m
+[31m→ 10   return prisma.user.findUnique([39m
+[31mServer has closed the connection.[39m
+2025-12-17 18:16:30:1630 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31mE:\Projects Starter\backend-node\src\features\users\data\user.repository.ts:10:24[39m
+
+[31m   7 }[39m
+[31m   8 [39m
+[31m   9 async findByEmail(email: string): Promise<User | null> {[39m
+[31m→ 10   return prisma.user.findUnique([39m
+[31mThe table `public.users` does not exist in the current database.[39m
+2025-12-17 18:18:27:1827 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - Connection terminated due to connection timeout[39m
+2025-12-17 18:26:53:2653 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31mE:\Projects Starter\backend-node\src\features\users\data\user.repository.ts:10:24[39m
+
+[31m   7 }[39m
+[31m   8 [39m
+[31m   9 async findByEmail(email: string): Promise<User | null> {[39m
+[31m→ 10   return prisma.user.findUnique([39m
+[31mThe table `public.users` does not exist in the current database.[39m
+2025-12-17 18:27:35:2735 [31merror[39m: [31mError during graceful shutdown: The client is closed[39m
+2025-12-17 18:37:05:375 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31mE:\Projects Starter\backend-node\src\features\users\data\user.repository.ts:10:24[39m
+
+[31m   7 }[39m
+[31m   8 [39m
+[31m   9 async findByEmail(email: string): Promise<User | null> {[39m
+[31m→ 10   return prisma.user.findUnique([39m
+[31mThe table `public.users` does not exist in the current database.[39m
+2025-12-17 19:18:53:1853 [31merror[39m: [31m[POST] /api/v1/users/register >> 500 - [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31mE:\Projects Starter\backend-node\src\features\users\data\user.repository.ts:10:24[39m
+
+[31m   7 }[39m
+[31m   8 [39m
+[31m   9 async findByEmail(email: string): Promise<User | null> {[39m
+[31m→ 10   return prisma.user.findUnique([39m
+[31mCan't reach database server at db.prisma.io[39m
+2025-12-17 19:24:50:2450 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
