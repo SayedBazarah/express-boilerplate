@@ -22,11 +22,16 @@ export class CacheService {
 
   /**
    * JSON serialization and storage
+   * FIXED: Uses ioredis syntax for TTL
    */
   async set(key: string, value: unknown, ttlSeconds: number): Promise<void> {
     try {
       const serialized = JSON.stringify(value);
-      await redisClient.setEx(key, ttlSeconds, serialized);
+      
+      // FIX: ioredis uses 'set' with options, not 'setEx'
+      // Syntax: client.set(key, value, 'EX', ttlInSeconds)
+      await redisClient.set(key, serialized, 'EX', ttlSeconds);
+      
       logger.debug(`Cache Set: ${key} (TTL: ${ttlSeconds}s)`);
     } catch (error) {
       logger.error(`Redis Set Error [Key: ${key}]:`, error);

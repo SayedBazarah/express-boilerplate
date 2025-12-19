@@ -13,13 +13,16 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  password  String
+  id                String   @id @default(uuid())
+  email             String   @unique
+  password          String
+  name              String?
+  isTwoFactorEnabled Boolean  @default(false)
+  twoFactorSecret   String?  
   isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   @@index([email])
   @@map("users")

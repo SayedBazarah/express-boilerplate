@@ -179,3 +179,393 @@
 2025-12-17 21:24:03:243 [32minfo[39m: [32mSIGINT received. Starting graceful shutdown...[39m
 2025-12-17 21:24:03:243 [32minfo[39m: [32mHTTP server closed.[39m
 2025-12-17 21:24:03:243 [32minfo[39m: [32mDatabase connections closed.[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32mRedis connected successfully[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 10:45:20:4520 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 10:45:26:4526 [32minfo[39m: [32mSIGINT received. Starting graceful shutdown...[39m
+2025-12-19 10:45:26:4526 [32minfo[39m: [32mHTTP server closed.[39m
+2025-12-19 10:45:26:4526 [32minfo[39m: [32mDatabase connections closed.[39m
+2025-12-19 10:45:26:4526 [32minfo[39m: [32mRedis connection closed.[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32mRedis connected successfully[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 19:34:58:3458 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:43:44:4344 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:43:44:4344 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:44:4344 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:53:4353 [32minfo[39m: [32mSIGINT received. Starting graceful shutdown...[39m
+2025-12-19 20:43:53:4353 [32minfo[39m: [32mHTTP server closed.[39m
+2025-12-19 20:43:53:4353 [32minfo[39m: [32mDatabase connections closed.[39m
+2025-12-19 20:43:53:4353 [32minfo[39m: [32mRedis connection closed.[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:43:55:4355 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:43:55:4355 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:55:4355 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:45:43:4543 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:45:43:4543 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:45:43:4543 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32mRedis connected successfully[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:46:10:4610 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:46:10:4610 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:10:4610 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32mRedis connected successfully[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:46:15:4615 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:46:15:4615 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:15:4615 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:19:4619 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:46:19:4619 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:46:19:4619 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:46:20:4620 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:46:20:4620 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:46:20:4620 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:46:20:4620 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:46:20:4620 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:46:20:4620 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:20:4620 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:52:20:5220 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:52:38:5238 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:53:32:5332 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 20:55:12:5512 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:06:29:629 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:07:02:72 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:07:36:736 [32minfo[39m: [32mJob added to queue [email-queue]: send-welcome[39m
+2025-12-19 21:08:20:820 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:08:36:836 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:08:38:838 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:08:54:854 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:09:24:924 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:10:11:1011 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:10:17:1017 [31merror[39m: [31mUnhandled Rejection at Promise: Invalid credentials[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:10:49:1049 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:11:38:1138 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:11:47:1147 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:11:54:1154 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:14:18:1418 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:20:20:2020 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:20:45:2045 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:20:58:2058 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:24:11:2411 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:24:17:2417 [31merror[39m: [31m[POST] /api/v1/auth/login >> 401 - Invalid credentials[39m
+2025-12-19 21:24:23:2423 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
+2025-12-19 21:24:33:2433 [32minfo[39m: [32mJob added to queue [email-queue]: send-welcome[39m
+2025-12-19 21:24:40:2440 [31merror[39m: [31mRedis Set Error [Key: refresh_token:f3df587a-9a7f-4767-b210-b3a08e2f6f60]: redis_1.redisClient.setEx is not a function[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:28:21:2821 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:29:44:2944 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:29:48:2948 [32minfo[39m: [32mUser f3df587a-9a7f-4767-b210-b3a08e2f6f60 logged in successfully.[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:43:21:4321 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:44:08:448 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:44:09:449 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:50:16:5016 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:50:20:5020 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:55:51:5551 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 21:55:53:5553 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:00:39:039 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:00:41:041 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:00:44:044 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:00:45:045 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:01:37:137 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:01:41:141 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:01:53:153 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:02:21:221 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:02:29:229 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 22:02:54:254 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32mConnecting to infrastructure...[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ Database connection established[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ Redis connected successfully[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ Redis connection established[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ Rate limiter initialized with Redis store[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ Rate Limiter initialized[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m✅ All background workers initialized[39m
+2025-12-19 23:03:42:342 [32minfo[39m: [32m🚀 Server running in development mode on port 3000[39m

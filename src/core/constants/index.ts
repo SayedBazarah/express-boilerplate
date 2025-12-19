@@ -7,6 +7,7 @@ export const APP_CONSTANTS = {
   CACHE: {
     DEFAULT_TTL: 3600, // 1 hour
     USER_PREFIX: 'user_cache:',
+    REFRESH_TOKEN_PREFIX: 'refresh_token:',
   },
   SECURITY: {
     SALT_ROUNDS: 12,

@@ -10,6 +10,8 @@ interface EnvConfig {
   REDIS_URL: string;
   CORS_ORIGIN: string;
   LOG_LEVEL: string;
+  JWT_SECRET: string;
+  JWT_REFRESH_SECRET: string;
 }
 
 const envSchema = joi.object({
@@ -19,6 +21,10 @@ const envSchema = joi.object({
   REDIS_URL: joi.string().uri().required(),
   CORS_ORIGIN: joi.string().required(),
   LOG_LEVEL: joi.string().valid('error', 'warn', 'info', 'http', 'debug').default('info'),
+  // ----
+  JWT_SECRET: joi.string().min(32).required(),
+  JWT_REFRESH_SECRET: joi.string().min(32).required(),
+  // ----
 }).unknown();
 
 const { error, value } = envSchema.validate(process.env);

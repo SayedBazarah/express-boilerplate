@@ -50,3 +50,22 @@
 [31m→ 10   return prisma.user.findUnique([39m
 [31mCan't reach database server at db.prisma.io[39m
 2025-12-17 19:24:50:2450 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
+2025-12-19 20:43:44:4344 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:44:4344 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:55:4355 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:43:55:4355 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:45:43:4543 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:45:43:4543 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:10:4610 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:10:4610 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:15:4615 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:15:4615 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:20:4620 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 20:46:20:4620 [31merror[39m: [31mUnhandled Rejection at Promise: redisClient is not defined[39m
+2025-12-19 21:07:02:72 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:08:20:820 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:08:38:838 [31merror[39m: [31m[POST] /api/v1/auth/login >> 500 - Invalid credentials[39m
+2025-12-19 21:10:17:1017 [31merror[39m: [31mUnhandled Rejection at Promise: Invalid credentials[39m
+2025-12-19 21:24:17:2417 [31merror[39m: [31m[POST] /api/v1/auth/login >> 401 - Invalid credentials[39m
+2025-12-19 21:24:23:2423 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
+2025-12-19 21:24:40:2440 [31merror[39m: [31mRedis Set Error [Key: refresh_token:f3df587a-9a7f-4767-b210-b3a08e2f6f60]: redis_1.redisClient.setEx is not a function[39m
