@@ -8,6 +8,7 @@ import { corsOptions } from './config/cors';
 import { authRoutes } from './features/auth/api/auth.routes';
 import { userRoutes } from './features/users/api/user.routes';
 import { rateLimiterMiddleware } from './core/middleware/rate-limiter';
+import { notFoundHandler } from './core/middleware/not-found-handler';
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
 
 // 5. Global Error Handling
+app.use(notFoundHandler);
 app.use(errorHandler);
 
 export default app;

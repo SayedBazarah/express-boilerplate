@@ -1,8 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// ============================================================================
+// CONFIG
+// ============================================================================
 
 generator client {
   provider = "prisma-client-js"
@@ -12,18 +10,851 @@ datasource db {
   provider = "postgresql"
 }
 
+// ============================================================================
+// ENUMS
+// ============================================================================
+
+enum SubscriptionStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  SUSPENDED
+}
+
+enum SubscriptionPlan {
+  TRIAL
+  BASIC
+  PREMIUM
+}
+
+enum MarketerStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum OrderType {
+  DINE_IN
+  TAKEAWAY
+  ONLINE
+  DELIVERY
+}
+
+enum OrderStatus {
+  PENDING     // Just created, not confirmed
+  IN_QUEUE    // Accepted by cashier
+  CONFIRMED   // Accepted by kitchen
+  PREPARING   // In the kitchen
+  READY       // Ready for pickup/serving
+  COMPLETED   // Paid and closed
+  CANCELLED   // Voided
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+  FAILED
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED_AMOUNT
+}
+
+enum StockTransactionType {
+  PURCHASE      // Buying from supplier (+)
+  SALE          // Sold in an order (-)
+  WASTE         // Rotten/Dropped (-)
+  THEFT         // Missing (-)
+  ADJUSTMENT    // Manual Count fix (+/-)
+}
+
+enum ShiftStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+}
+
+enum JobTitle {
+  MANAGER
+  CASHIER
+  CHEF
+  WAITER
+  DRIVER
+  CLEANER
+}
+// ============================================================================
+// EMPLOYEE SHIFTS & ATTENDANCE  
+// ============================================================================
+
+// model Employee {
+//   id          String    @id @default(cuid())
+//   name        String
+//   phone       String?
+//   jobTitle    JobTitle  @default(WAITER) @map("job_title")
+//   hourlyRate  Decimal   @default(0) @map("hourly_rate") @db.Decimal(10, 2) // For payroll calc
+  
+//   // Relations
+//   accountId   String    @map("account_id")
+//   account     Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  
+//   // Link to a User (Optional: Only if this employee can login)
+//   user        User?
+
+//   // HR Relations (Moved from User)
+//   shifts      Shift[] 
+//   attendances Attendance[]
+  
+//   // Operation Relations
+//   ordersServed Order[]  @relation("ServedBy") // Orders they took/served
+
+//   isActive    Boolean   @default(true) @map("is_active")
+//   deletedAt   DateTime? @map("deleted_at")
+//   createdAt   DateTime  @default(now()) @map("created_at")
+//   updatedAt   DateTime  @updatedAt @map("updated_at")
+
+//   @@index([accountId, isActive])
+//   @@map("employees")
+// }
+
+// model Shift {
+//   id          String      @id @default(cuid())
+//   startTime   DateTime    @map("start_time")
+//   endTime     DateTime    @map("end_time")
+//   note        String?     // "Covering for Ahmed"
+//   status      ShiftStatus @default(SCHEDULED)
+  
+//   // Relations
+//   employeeId  String      @map("employee_id")
+//   employee    Employee    @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+//   userId      String      @map("user_id")
+//   user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+//   accountId   String      @map("account_id")
+//   account     Account     @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  
+//   // Link to actual attendance
+//   attendance  Attendance?
+
+//   createdAt   DateTime    @default(now()) @map("created_at")
+//   updatedAt   DateTime    @updatedAt @map("updated_at")
+
+//   @@index([accountId, startTime])
+//   @@map("shifts")
+// }
+
+// model Attendance {
+//   id          String    @id @default(cuid())
+//   clockIn     DateTime  @default(now()) @map("clock_in")
+//   clockOut    DateTime? @map("clock_out")
+  
+//   // Calculations
+//   breakMinutes Int      @default(0) @map("break_minutes") // Unpaid break time
+//   workMinutes  Int?     @map("work_minutes") // Net minutes worked (calc on clockOut)
+  
+//   // GPS/IP Tracking (Optional security)
+//   clockInIp   String?   @map("clock_in_ip")
+  
+//   // Relations
+//   employeeId  String      @map("employee_id")
+//   employee    Employee    @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  
+//   shiftId     String?   @unique @map("shift_id") // Can exist without a scheduled shift?
+//   shift       Shift?    @relation(fields: [shiftId], references: [id])
+  
+//   userId      String    @map("user_id")
+//   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+//   accountId   String    @map("account_id")
+//   account     Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+//   createdAt   DateTime  @default(now()) @map("created_at")
+//   updatedAt   DateTime  @updatedAt @map("updated_at")
+
+//   @@map("attendances")
+// }
+// ============================================================================
+// PARTNER / MARKETER MODELS
+// ============================================================================
+
+model Marketer {
+  id        String         @id @default(cuid())
+  name      String
+  email     String         @unique
+  phone     String?
+  code      String         @unique // The "Subscription Code" (e.g. "START50")
+  status    MarketerStatus @default(ACTIVE)
+  
+  // Incentive Config (Optional: What does this code give the client?)
+  discountPercent Int @default(0) @map("discount_percent") // e.g., 10% off
+  trialDays       Int @default(14) @map("trial_days")      // e.g., Extra trial time
+
+  // Relations
+  referredAccounts Account[] // The clients they brought in
+
+// The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("marketers")
+}
+
+// ============================================================================
+// ACCOUNT (TENANT) MODELS
+// ============================================================================
+model Account {
+  id          String  @id @default(cuid())
+  name        String
+  logo        String?
+  governorate String? @map("governorate") 
+  language    String  @default("ar")
+  timezone    String  @default("Africa/Cairo")
+  currency    String  @default("EGP")
+
+  // Relations
+  users         User[]
+  subscriptions Subscription[]
+  roles         Role[]
+  menus         Menu[]
+  menuItems     MenuItem[]
+  marketerId String?   @map("marketer_id")
+  marketer   Marketer? @relation(fields: [marketerId], references: [id]) // No Cascade Delete!
+  orders        Order[]
+  promoCodes    PromoCode[]
+  customers     Customer[]
+  inventoryItems InventoryItem[]
+  suppliers     Supplier[]
+  purchaseOrders PurchaseOrder[]
+  stockTransactions StockTransaction[]
+  loyaltySettings LoyaltySetting?
+  tablets       Table[]
+
+  // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+  
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("accounts") // Table name in DB: accounts
+  @@index([createdAt])
+}
+
+model Subscription {
+  id           String             @id @default(cuid())
+  accountId    String             @map("account_id")
+  plan         SubscriptionPlan   @default(TRIAL)
+  status       SubscriptionStatus @default(ACTIVE)
+  startDate    DateTime           @default(now()) @map("start_date")
+  endDate      DateTime           @default(dbgenerated("(NOW() + INTERVAL '30 days')")) @map("end_date")
+  monthlyPrice Decimal            @map("monthly_price") @db.Decimal(10, 2) // Precision for money
+  features     Json?
+
+  // Features Limits
+  maxUsers Int @default(1) @map("max_users")
+
+  // Relations
+  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([accountId, status])
+  @@index([endDate])
+  @@map("subscriptions")
+}
+
+// ============================================================================
+// USER MANAGEMENT MODELS
+// ============================================================================
+
 model User {
-  id                String   @id @default(uuid())
-  email             String   @unique
-  password          String
-  name              String?
-  isTwoFactorEnabled Boolean  @default(false)
-  twoFactorSecret   String?  
-  isActive  Boolean  @default(true)
+  id          String    @id @default(cuid())
+  name        String
+  email       String    @unique
+  password    String?
+  phone       String?   @unique
+  avatar      String?
+  isActive    Boolean   @default(true) @map("is_active")
+  isCompleted Boolean   @default(false) @map("is_completed")
+  lastLoginAt DateTime? @map("last_login_at")
 
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  // OAuth Fields
+  provider   String  @default("local")
+  providerId String? @map("provider_id")
 
+  // Role & Context
+  roleId    String? @map("role_id")
+  accountId String  @map("account_id")
+
+  // Relations
+  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  role    Role?   @relation(fields: [roleId], references: [id])
+  createdOrders Order[] @relation("CreatedBy") // Orders they created
+  stockTransactions StockTransaction[] // Stock actions they performed
+
+// The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([provider, providerId])
+  @@index([accountId])
   @@index([email])
+  @@index([isActive])
   @@map("users")
+}
+
+model Role {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  isDefault   Boolean @default(false) @map("is_default")
+
+  // Relations
+  accountId   String  @map("account_id")
+  account     Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  users       User[]
+  permissions RolePermission[]
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([accountId])
+  @@index([name])
+  @@map("roles")
+}
+
+model Permission {
+  id          String  @id @default(cuid())
+  code        String  @unique // e.g. "orders:create"
+  name        String
+  description String?
+  module      String
+
+  // Relations
+  roles RolePermission[]
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([module])
+  @@map("permissions")
+}
+
+// Join Table for Many-to-Many
+model RolePermission {
+  roleId       String @map("role_id")
+  permissionId String @map("permission_id")
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  assignedAt DateTime @default(now()) @map("assigned_at")
+
+  @@id([roleId, permissionId]) // Composite Primary Key is better here than a separate ID
+  @@map("role_permissions")
+}
+
+// ============================================================================
+// TABLE MANAGEMENT MODELS
+// ============================================================================
+
+model Table {
+  id            String   @id @default(cuid())
+  name          String   
+  qrCode        String?  
+  
+  accountId     String   @map("account_id")
+  account       Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  
+  orders        Order[]
+
+  @@unique([accountId, name])
+  @@map("tables")
+}
+
+// ============================================================================
+// MENU MANAGEMENT MODELS
+// ============================================================================
+
+model Menu {
+  id            String  @id @default(cuid())
+  name        String  
+  description String? 
+  isActive      Boolean @default(true) @map("is_active")
+  isDefault     Boolean @default(false) @map("is_default")
+
+  // Relations
+  accountId  String     @map("account_id")
+  account    Account    @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  categories MenuCategory[]
+
+  // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+  
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([accountId, isActive])
+  @@map("menus")
+}
+
+model MenuCategory {
+  id            String  @id @default(cuid())
+  name          String  
+  description   String? 
+  image         String?
+  sortOrder     Int     @default(0) @map("sort_order")
+  isActive      Boolean @default(true) @map("is_active")
+
+  // Relations
+  menuId String @map("menu_id")
+  menu   Menu   @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  items  MenuItem[]
+
+  // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([menuId, sortOrder])
+  @@map("menu_categories")
+}
+
+model MenuItem {
+  id            String   @id @default(cuid())
+  name          String
+  description String? 
+  image         String?
+  price         Decimal  @db.Decimal(10, 2)
+  salePrice     Decimal? @map("sale_price") @db.Decimal(10, 2)
+  costPrice     Decimal? @map("cost_price") @db.Decimal(10, 2)
+  prepTime      Int?     @map("prep_time") // Minutes
+  isAvailable   Boolean  @default(true) @map("is_available")
+  isPopular     Boolean  @default(false) @map("is_popular")
+  allergens     String[] @default([])
+  nutrition     Json?    @map("nutrition_info")
+
+  // Relations
+  categoryId String       @map("category_id")
+  category   MenuCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  recipeItems RecipeItem[]
+orderItems OrderItem[]
+    // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Denormalization for Performance:
+  accountId  String       @map("account_id") 
+  account    Account      @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  optionGroups MenuItemOptionGroup[]
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([categoryId, isAvailable])
+  @@index([accountId]) // Critical for looking up items by restaurant
+  @@map("menu_items")
+}
+
+model MenuItemOptionGroup {
+  id            String  @id @default(cuid())
+  name          String   
+  isRequired    Boolean @default(false) @map("is_required")
+  allowMultiple Boolean @default(false) @map("allow_multiple")
+  minSelections Int     @default(0) @map("min_selections") // Added for validation
+  maxSelections Int?    @map("max_selections")
+  sortOrder     Int     @default(0) @map("sort_order")
+
+  // Relations
+  itemId  String   @map("item_id")
+  item    MenuItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  options MenuItemOption[]
+
+  // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([itemId, sortOrder])
+  @@map("menu_item_option_groups")
+}
+
+model MenuItemOption {
+  id            String  @id @default(cuid())
+  name          String  
+  price         Decimal @default(0) @db.Decimal(10, 2)
+  isAvailable   Boolean @default(true) @map("is_available")
+  sortOrder     Int     @default(0) @map("sort_order")
+
+  // Relations
+  groupId String              @map("group_id")
+  group   MenuItemOptionGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  recipeItems RecipeItem[]
+  orderItemModifiers OrderItemModifier[]
+  // The Soft Delete Field
+  deletedAt DateTime? @map("deleted_at")
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([groupId, sortOrder])
+  @@map("menu_item_options")
+}
+
+// ============================================================================
+// ORDER & TRANSACTIONS
+// ============================================================================
+
+model Order {
+  id           String        @id @default(cuid())
+  shortCode    String        @map("short_code") // Human readable: "#101"
+  type         OrderType
+  status       OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING) @map("payment_status")
+  
+  // Financials (High Precision)
+  subTotal     Decimal       @map("sub_total") @db.Decimal(10, 2)
+  tax          Decimal       @default(0) @db.Decimal(10, 2)
+  discount     Decimal       @default(0) @db.Decimal(10, 2)
+  total        Decimal       @db.Decimal(10, 2)
+  
+  // Context
+  note         String?       // "Allergic to nuts"
+  tableNumber  String?       @map("table_number") // Keep simple for now (or link to Table model later)
+  
+  // Relations
+  accountId    String        @map("account_id")
+  account      Account       @relation(fields: [accountId], references: [id])
+  tableId      String?       @map("table_id")
+  table        Table?        @relation(fields: [tableId], references: [id])
+
+  // 1. Who is logged in? (The Cashier)
+  createdById  String?   @map("created_by_id")
+  createdBy    User?     @relation("CreatedBy", fields: [createdById], references: [id])
+
+  // Customer (Optional)
+  customerName  String?      @map("customer_name")
+  customerPhone String?      @map("customer_phone")
+  
+  items        OrderItem[]
+
+// 1. Link to Customer
+  customerId    String?    @map("customer_id")
+  customer      Customer?  @relation(fields: [customerId], references: [id])
+
+  // 2. Link to Promo Code
+  promoCodeId   String?    @map("promo_code_id")
+  promoCode     PromoCode? @relation(fields: [promoCodeId], references: [id])
+  
+  // 3. Discount Snapshot (How much did we actually save?)
+  discountVal   Decimal    @default(0) @map("discount_value") @db.Decimal(10, 2)
+  
+  // 4. Loyalty Snapshot
+  pointsEarned  Int        @default(0) @map("points_earned")
+  pointsRedeemed Int       @default(0) @map("points_redeemed")
+  pointsValue   Decimal    @default(0) @map("points_value") @db.Decimal(10, 2) // Money saved by points
+  // Timestamps (NO Soft Delete for Orders - Financial integrity!)
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  @@index([accountId, status])
+  @@index([createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id           String   @id @default(cuid())
+  
+  // Snapshot Data (Copy from Menu Item)
+  name         String   // "Cheeseburger"
+  price        Decimal  @db.Decimal(10, 2) // 150.00
+  quantity     Int      @default(1)
+  totalPrice   Decimal  @map("total_price") @db.Decimal(10, 2) // price * quantity
+  
+  note         String?  // "No onions" specific to this item
+
+  // Relations
+  orderId      String   @map("order_id")
+  order        Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  // Link back to original menu item (Optional, for analytics)
+  // If MenuItem is deleted, this stays null or we keep the ID.
+  menuItemId   String?  @map("menu_item_id")
+  menuItem     MenuItem? @relation(fields: [menuItemId], references: [id]) 
+
+  modifiers    OrderItemModifier[]
+
+  @@map("order_items")
+}
+
+model OrderItemModifier {
+  id           String   @id @default(cuid())
+  
+  // Snapshot Data
+  name         String   // "Extra Cheese"
+  price        Decimal  @db.Decimal(10, 2) // 20.00
+  quantity     Int      @default(1)
+  
+  // Relations
+  orderItemId  String    @map("order_item_id")
+  orderItem    OrderItem @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
+
+  // Link back to original option
+  optionId     String?   @map("option_id")
+  option       MenuItemOption? @relation(fields: [optionId], references: [id])
+
+  @@map("order_item_modifiers")
+}
+
+// ============================================================================
+// PROMO CODES  
+// ============================================================================
+
+model PromoCode {
+  id              String       @id @default(cuid())
+  code            String       // e.g. "SUMMER20" (Not unique globally, only per account!)
+  description     String?
+  type            DiscountType
+  value           Decimal      @db.Decimal(10, 2) // e.g. 10.00 (percent or currency)
+  
+  // Validation Rules
+  minOrderValue   Decimal?     @map("min_order_value") @db.Decimal(10, 2)
+  maxDiscount     Decimal?     @map("max_discount") @db.Decimal(10, 2) // Cap for % discounts
+  startDate       DateTime     @default(now()) @map("start_date")
+  endDate         DateTime?    @map("end_date")
+  isActive        Boolean      @default(true) @map("is_active")
+  
+  // Usage Limits
+  maxUses         Int?         @map("max_uses") // Total times this can be used
+  usedCount       Int          @default(0) @map("used_count") // Auto-incremented on use
+  
+  // Relations
+  accountId       String       @map("account_id")
+  account         Account      @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  orders          Order[]      // See which orders used this code
+
+  // Soft Delete
+  deletedAt       DateTime?    @map("deleted_at")
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+
+  @@unique([accountId, code]) // Constraint: Code must be unique *within* the restaurant
+  @@index([code])
+  @@map("promo_codes")
+}
+
+// ============================================================================
+// CUSTOMER & LOYALITY POINTS  
+// ============================================================================
+
+model Customer {
+  id            String    @id @default(cuid())
+  name          String
+  phone         String    // Primary lookup key
+  email         String?
+  birthDate     DateTime? @map("birth_date") // For birthday rewards
+  
+  // Loyalty Wallet
+  pointsBalance Int       @default(0) @map("points_balance")
+  totalSpent    Decimal   @default(0) @map("total_spent") @db.Decimal(10, 2)
+  visitCount    Int       @default(0) @map("visit_count")
+  lastVisitAt   DateTime? @map("last_visit_at")
+
+  // Relations
+  accountId     String    @map("account_id")
+  account       Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  orders        Order[]
+  
+  // Audit Trail
+  loyaltyLogs   LoyaltyLog[]
+
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  @@unique([accountId, phone]) // A phone number is unique per restaurant
+  @@index([phone])
+  @@map("customers")
+}
+
+// Config: How the restaurant handles points
+model LoyaltySetting {
+  id            String   @id @default(cuid())
+  isEnabled     Boolean  @default(false) @map("is_enabled")
+  
+  // Earning Rule: "Spend 10 EGP get 1 Point"
+  earningRate   Decimal  @default(1) @map("earning_rate") @db.Decimal(10, 2) 
+  minSpend      Decimal  @default(0) @map("min_spend") @db.Decimal(10, 2)
+  
+  // Burning Rule: "1 Point = 0.50 EGP"
+  redemptionRate Decimal @default(0.1) @map("redemption_rate") @db.Decimal(10, 2)
+
+  // Relations
+  accountId     String   @unique @map("account_id")
+  account       Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  @@map("loyalty_settings")
+}
+
+// Audit: History of points
+model LoyaltyLog {
+  id          String   @id @default(cuid())
+  points      Int      // +50 (Earned) or -20 (Redeemed)
+  reason      String   // "Order #101" or "Manual Adjustment"
+  
+  customerId  String   @map("customer_id")
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  
+  orderId     String?  @map("order_id") // Optional link to order
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  @@map("loyalty_logs")
+}
+
+// ============================================================================
+// INVENTORY & SUPPLIERS  
+// ============================================================================
+
+model Supplier {
+  id          String   @id @default(cuid())
+  name        String
+  contactName String?  @map("contact_name")
+  phone       String?
+  email       String?
+  address     String?
+  
+  // Relations
+  accountId   String   @map("account_id")
+  account     Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  items       InventoryItem[] // Items this supplier provides (Optional relation)
+  purchaseOrders PurchaseOrder[]
+
+  deletedAt   DateTime? @map("deleted_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@map("suppliers")
+}
+
+model InventoryItem {
+  id            String   @id @default(cuid())
+  name          String   // e.g. "Tomatoes", "Flour"
+  sku           String?  // Barcode / Stock Keeping Unit
+  
+  // Stock Levels
+  currentStock  Decimal  @default(0) @map("current_stock") @db.Decimal(10, 4) // High precision (e.g. 0.005 kg)
+  minStockLevel Decimal  @default(0) @map("min_stock_level") @db.Decimal(10, 4) // Alert trigger
+  unit          String   // "kg", "liter", "pcs"
+  costPerUnit   Decimal  @default(0) @map("cost_per_unit") @db.Decimal(10, 2) // Calculated average cost
+
+  // Relations
+  accountId     String   @map("account_id")
+  account       Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  supplierId    String?  @map("supplier_id") // Preferred supplier
+  supplier      Supplier? @relation(fields: [supplierId], references: [id])
+  
+  recipeItems   RecipeItem[] // Where is this used?
+  stockLogs     StockTransaction[] // History of movements
+
+  purchaseOrderItems PurchaseOrderItem[]
+
+  deletedAt     DateTime? @map("deleted_at")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  @@index([accountId])
+  @@map("inventory_items")
+}
+
+// The Bridge: Connects Menu Item to Ingredients
+model RecipeItem {
+  id              String        @id @default(cuid())
+  quantity        Decimal       @db.Decimal(10, 4) // How much is used? (e.g. 0.150 kg)
+  
+  // Relations
+  inventoryItemId String        @map("inventory_item_id")
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  
+  // Can be linked to a Menu Item OR a Modifier
+  menuItemId      String?       @map("menu_item_id")
+  menuItem        MenuItem?     @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  
+  modifierId      String?       @map("modifier_id") // Optional: "Extra Cheese" consumes Cheese stock
+  modifier        MenuItemOption? @relation(fields: [modifierId], references: [id])
+
+  createdAt       DateTime      @default(now()) @map("created_at")
+  @@map("recipe_items")
+}
+model StockTransaction {
+  id              String               @id @default(cuid())
+  type            StockTransactionType
+  quantity        Decimal              @db.Decimal(10, 4) // Positive or Negative
+  costSnapshot    Decimal?             @map("cost_snapshot") @db.Decimal(10, 2) // Cost at time of event
+  reason          String?              // "Order #101" or "Dropped on floor"
+
+  inventoryItemId String               @map("inventory_item_id")
+  inventoryItem   InventoryItem        @relation(fields: [inventoryItemId], references: [id], onDelete: Cascade)
+  
+  accountId       String               @map("account_id")
+  account         Account              @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  createdById     String?              @map("created_by_id") // Which staff did this?
+  createdBy       User?                @relation(fields: [createdById], references: [id])
+
+  createdAt       DateTime             @default(now()) @map("created_at")
+  @@map("stock_transactions")
+}
+
+model PurchaseOrder {
+  id          String    @id @default(cuid())
+  status      String    @default("PENDING") // PENDING, RECEIVED, CANCELLED
+  totalCost   Decimal   @default(0) @map("total_cost") @db.Decimal(10, 2)
+  orderDate   DateTime  @default(now()) @map("order_date")
+  deliveryDate DateTime? @map("delivery_date")
+
+  supplierId  String    @map("supplier_id")
+  supplier    Supplier  @relation(fields: [supplierId], references: [id])
+  
+  accountId   String    @map("account_id")
+  account     Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  
+  items       PurchaseOrderItem[]
+
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  @@map("purchase_orders")
+}
+
+model PurchaseOrderItem {
+  id              String        @id @default(cuid())
+  quantity        Decimal       @db.Decimal(10, 4)
+  unitCost        Decimal       @map("unit_cost") @db.Decimal(10, 2)
+  totalCost       Decimal       @map("total_cost") @db.Decimal(10, 2)
+
+  purchaseOrderId String        @map("purchase_order_id")
+  purchaseOrder   PurchaseOrder @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
+  
+  inventoryItemId String        @map("inventory_item_id")
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  
+  @@map("purchase_order_items")
 }

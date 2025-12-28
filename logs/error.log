@@ -69,3 +69,38 @@
 2025-12-19 21:24:17:2417 [31merror[39m: [31m[POST] /api/v1/auth/login >> 401 - Invalid credentials[39m
 2025-12-19 21:24:23:2423 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
 2025-12-19 21:24:40:2440 [31merror[39m: [31mRedis Set Error [Key: refresh_token:f3df587a-9a7f-4767-b210-b3a08e2f6f60]: redis_1.redisClient.setEx is not a function[39m
+2025-12-25 15:30:30:3030 [31merror[39m: [31m[POST] /api/v1/users/register >> 400 - "email" is required[39m
+2025-12-25 15:30:39:3039 [31merror[39m: [31m[POST] /api/v1/users/register >> 400 - "email" must be a valid email[39m
+2025-12-25 15:30:50:3050 [31merror[39m: [31m[POST] /api/v1/users/register >> 409 - Email already registered[39m
+2025-12-25 15:35:34:3534 [31merror[39m: [31m[GET] /api/check-health >> 404 - Resource not found[39m
+2025-12-28 10:56:55:5655 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:55:5655 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:56:5656 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:56:5656 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:56:5656 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:57:5657 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:57:5657 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:58:5658 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:59:5659 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:56:59:5659 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:00:570 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:01:571 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:01:571 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:02:572 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:03:573 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:04:574 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:05:575 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:06:576 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:07:577 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:09:579 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:10:5710 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:11:5711 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:12:5712 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:14:5714 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:15:5715 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:17:5717 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:18:5718 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:20:5720 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:21:5721 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:23:5723 [31merror[39m: [31m❌ Redis Client Error[39m
+2025-12-28 10:57:25:5725 [31merror[39m: [31m❌ Redis Client Error[39m
